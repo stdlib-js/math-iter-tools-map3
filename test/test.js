@@ -853,7 +853,7 @@ tape( 'if an environment supports `Symbol.iterator` and the provided iterators a
 	var i;
 
 	iterMap3 = proxyquire( './../lib/main.js', {
-		'@stdlib/symbol/iterator': '__ITERATOR_SYMBOL__'
+		'@stdlib/symbol-iterator': '__ITERATOR_SYMBOL__'
 	});
 
 	opts = {
@@ -895,7 +895,7 @@ tape( 'if an environment supports `Symbol.iterator` and the provided iterators a
 	var i;
 
 	iterMap3 = proxyquire( './../lib/main.js', {
-		'@stdlib/symbol/iterator': '__ITERATOR_SYMBOL__'
+		'@stdlib/symbol-iterator': '__ITERATOR_SYMBOL__'
 	});
 
 	it1 = iterMap3( 4.0, 3.0, 5.0, clamp );
@@ -918,7 +918,7 @@ tape( 'if an environment does not support `Symbol.iterator`, the returned iterat
 	var it;
 
 	iterMap3 = proxyquire( './../lib/main.js', {
-		'@stdlib/symbol/iterator': false
+		'@stdlib/symbol-iterator': false
 	});
 
 	it = iterMap3( randu(), randu(), randu(), clamp );
@@ -933,7 +933,7 @@ tape( 'if a provided iterator is not iterable, the returned iterator is not iter
 	var it;
 
 	iterMap3 = proxyquire( './../lib/main.js', {
-		'@stdlib/symbol/iterator': '__ITERATOR_SYMBOL__'
+		'@stdlib/symbol-iterator': '__ITERATOR_SYMBOL__'
 	});
 
 	rand = randu();
