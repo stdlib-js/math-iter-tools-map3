@@ -18,6 +18,17 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # iterMap3
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
@@ -34,14 +45,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-iter-tools-map3
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import iterMap3 from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-iter-tools-map3@deno/mod.js';
+var iterMap3 = require( '@stdlib/math-iter-tools-map3' );
 ```
 
 #### iterMap3( iter0, iter1, iter2, fcn\[, options] )
@@ -49,8 +76,8 @@ import iterMap3 from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-iter-tools-map3
 Returns an [iterator][mdn-iterator-protocol] which invokes a ternary `function` accepting numeric arguments for each iterated value.
 
 ```javascript
-import array2iterator from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-to-iterator@deno/mod.js';
-import clamp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-clamp@deno/mod.js';
+var array2iterator = require( '@stdlib/array-to-iterator' );
+var clamp = require( '@stdlib/math-base-special-clamp' );
 
 var x = array2iterator( [ 1.0, -2.0, 3.0, 14.0 ] );
 var min = array2iterator( [ 1.0, 0.0, -1.0, 1.0 ] );
@@ -83,7 +110,7 @@ The invoked `function` is provided three arguments:
 -   `z`: iterated value from third input [iterator][mdn-iterator-protocol].
 
 ```javascript
-import array2iterator from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-to-iterator@deno/mod.js';
+var array2iterator = require( '@stdlib/array-to-iterator' );
 
 function fcn( x, y, z ) {
     return x + y + z + 10;
@@ -115,8 +142,8 @@ The function supports the following `options`:
 By default, the function returns an [iterator][mdn-iterator-protocol] which returns `NaN` when an input [iterator][mdn-iterator-protocol] yields a non-numeric value. To specify a different return value, set the `invalid` option.
 
 ```javascript
-import array2iterator from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-to-iterator@deno/mod.js';
-import clamp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-clamp@deno/mod.js';
+var array2iterator = require( '@stdlib/array-to-iterator' );
+var clamp = require( '@stdlib/math-base-special-clamp' );
 
 var it1 = array2iterator( [ '1.0', '2.0', '3.0' ] );
 var it2 = array2iterator( [ 0.0, 0.0, 0.0 ] );
@@ -140,8 +167,8 @@ v = it.next().value;
 If provided a numeric value as an [`iterator`][mdn-iterator-protocol] argument, the value is broadcast as an **infinite** [iterator][mdn-iterator-protocol] which **always** returns the provided value.
 
 ```javascript
-import array2iterator from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-to-iterator@deno/mod.js';
-import clamp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-clamp@deno/mod.js';
+var array2iterator = require( '@stdlib/array-to-iterator' );
+var clamp = require( '@stdlib/math-base-special-clamp' );
 
 var x = array2iterator( [ -1.0, 20.0 ] );
 
@@ -185,9 +212,9 @@ var bool = it.next().done;
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-iter-uniform@deno/mod.js';
-import clamp from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-clamp@deno/mod.js';
-import iterMap3 from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-iter-tools-map3@deno/mod.js';
+var uniform = require( '@stdlib/random-iter-uniform' );
+var clamp = require( '@stdlib/math-base-special-clamp' );
+var iterMap3 = require( '@stdlib/math-iter-tools-map3' );
 
 // Create seeded iterators for generating pseudorandom numbers:
 var x = uniform( 0.0, 10.0, {
@@ -248,7 +275,7 @@ while ( true ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -278,8 +305,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-iter-tools-map3.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-iter-tools-map3
 
-[test-image]: https://github.com/stdlib-js/math-iter-tools-map3/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/math-iter-tools-map3/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/math-iter-tools-map3/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/math-iter-tools-map3/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-iter-tools-map3/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-iter-tools-map3?branch=main
